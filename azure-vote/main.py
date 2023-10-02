@@ -4,6 +4,10 @@ import redis
 import socket
 import logging
 
+
+
+
+ 
 # App Insights
 # TODO: Import required libraries for App Insights
 from opencensus.ext.azure.log_exporter import AzureLogHandler
@@ -35,7 +39,7 @@ config_integration.trace_integrations(['requests'])
 
 logger = logging.getLogger(__name__)
 handler = AzureLogHandler(connection_string=instrumentation_key)
-# handler.setFormatter(logging.Formatter('%(traceId)s %(spanId)s %(message)s'))
+handler.setFormatter(logging.Formatter('%(traceId)s %(spanId)s %(message)s'))
 logger.addHandler(handler)
 
 # Logging custom Events
@@ -148,6 +152,6 @@ def index():
 
 if __name__ == "__main__":
     # TODO: Use the statement below when running locally
-    # app.run()
+    app.run()
     # TODO: Use the statement below before deployment to VMSS
-    app.run(host='0.0.0.0', threaded=True, debug=True) # remotea
+    # app.run(host='0.0.0.0', threaded=True, debug=True) # remotea
