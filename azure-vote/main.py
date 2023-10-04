@@ -31,7 +31,7 @@ app.config.from_pyfile('config_file.cfg')
 
 # Application Insight Instrumentation Key
 instrumentation_key = app.config['APP_INSIGHTS_INSTRUMENTATION_KEY']
-print(f'Instrumentation Key: {instrumentation_key}')
+# print(f'Instrumentation Key: {instrumentation_key}')
 
 # Logging
 config_integration.trace_integrations(['logging'])
